@@ -65,3 +65,32 @@ class Student {
 		return count*6;
 	}
 }
+
+class Faculty{
+	List<Student> studentList = new ArrayList<>();
+	String nameFaculty;
+	Student student;
+
+	public Faculty(List<Student> studentList, String nameFaculty) {
+		this.studentList = studentList;
+		this.nameFaculty = nameFaculty;
+		this.student = student;
+	}
+
+	public double getAverage(){
+		double sum = 0;
+		for (int i = 0; i < studentList.size();i++){
+			sum += studentList.get(i).getAverage();
+		}
+		return sum;
+	}
+
+	public int credits(){
+		int sum = 0;
+		for (int i = 0; i < studentList.size();i++){
+			sum += studentList.get(i).ECTSCredits();
+		}
+		return sum/studentList.size();
+	}
+
+}
